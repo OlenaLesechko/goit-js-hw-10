@@ -4,8 +4,6 @@
   | default @import url()
   |============================
 */
-@import url('./reset.css');
-@import url('./vite-promo.css');
 @import url('./header.css');
 
 :root {
@@ -27,16 +25,10 @@
   box-sizing: border-box;
 }
 
-section {
-  padding: 30px;
-}
-
 section{
     margin-top: 20px;
 }
-input{
-    width: 150px;
-}
+
 
 #datetime-picker {
   width: 272px;
@@ -56,6 +48,9 @@ input{
 
 button {
   padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border-radius: 8px;
   background-color: #4E75FF;
   border: none;
@@ -101,36 +96,41 @@ button:not([disabled]):hover {
   line-height: 1.5;
   text-transform: uppercase;
 }
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-}
+
+
 
 .form {
+  width: 360px;
+  margin-top: 10px;
+  padding: 0;
+  
+}
+.form > label{
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  width: 360px;
-  color: #2E2F42;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
+  gap: 5px;
+}
+
+.form fieldset {
+  margin-bottom: 10px;
+    padding-left: 48px;
+    padding-right: 48px;
+    border: 1px solid #808080;
+    margin-top: 30px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
 }
 
 
-.form > button{
-  width: 360px;
+
+.form button {
+  width: 100%;
 }
 
-.form > label {
-  display: flex;
-  flex-direction: column;
-}
-.form > label > input{
-  height: 40px;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: 400;
+.form button:hover,
+.form button:focus {
+  background-color: rgb(102, 102, 241);
+  color: white;
 }
