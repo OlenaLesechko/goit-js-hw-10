@@ -3,15 +3,15 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const inputC = document.querySelector('#datetime-picker');
-const startCountdownButton = document.querySelector('button');
+const datetimePickerInput = document.querySelector('#datetime-picker');
+const btnStart = document.querySelector('button');
 const dataDays = document.querySelector('[data-days]');
 const dataHours = document.querySelector('[data-hours]');
 const dataMinutes = document.querySelector('[data-minutes]');
 const dataSeconds = document.querySelector('[data-seconds]');
 
 document.addEventListener('DOMContentLoaded', () => {
-    startCountdownButton.disabled = true;
+    btnStart.disabled = true;
 });
 
 let userSelectedDate = '';
@@ -28,15 +28,15 @@ const options = {
         message: 'Please choose a date in the future',
         position: 'topRight',
         });
-        startCountdownButton.disabled = true;
+        btnStart.disabled = true;
         } else {
-        startCountdownButton.disabled = false;
+        btnStart.disabled = false;
         userSelectedDate = selectedDates[0];
         }
     },
 };
 
-const datePicker = flatpickr(inputC, options);
+const datePicker = flatpickr(datetimePickerInput, options);
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
@@ -57,7 +57,7 @@ function convertMs(ms) {
     return { days, hours, minutes, seconds };
 }
 
-startCountdownButton.addEventListener('click', countdown);
+btnStart.addEventListener('click', countdown);
 
 function addLeadingZero(value) {
     return value.toString().padStart(2, '0');
